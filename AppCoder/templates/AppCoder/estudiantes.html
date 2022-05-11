@@ -1,0 +1,27 @@
+{% extends "AppCoder/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+<h1>Listado de estudiantes</h1>
+
+{% for estudiante in estudiantes %}
+
+<li>{{ estudiante }}</li>
+<button>
+    <a href="{% url 'eliminarEstudiante' estudiante.nombre  %}"> Eliminar</a>
+</button>
+<button>
+    <a href="{% url 'editarEstudiante' estudiante.nombre  %}"> Editar</a>
+</button>
+
+{% endfor %}
+
+{% endblock %}
+
+{% block titulo %}
+
+    <h1 >Estudiantes</h1>
+
+{% endblock %}
